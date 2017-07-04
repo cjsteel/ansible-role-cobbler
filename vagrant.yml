@@ -1,0 +1,24 @@
+---
+# file: vagrant.yml
+# VM config file for the Vagrant development environment
+
+hosts:
+    cobbler-centos:
+      private_ip: 10.0.3.10
+      memory: 512
+      box: centos/7
+#      extra_vars: { bound_interface: 'enp0s8', cobbler_dhcp_listen_interfaces: 'enp0s8' }
+      extra_vars: { bound_interface: 'eth1', cobbler_dhcp_listen_interfaces: 'eth1' }
+      forwarded_ports:
+        guest: 80
+        host: 8080
+
+#    cobbler-ubuntu:
+#      private_ip: 10.0.4.110
+#      memory: 512
+#      box: ubuntu/xenial64
+
+
+
+
+
